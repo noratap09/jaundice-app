@@ -1,38 +1,105 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  font-family: Arial, sans-serif;
+  margin: 0 auto;
   min-height: 100vh;
+  background: linear-gradient(135deg, #4203a9, #90bafc);
+  height: 100%;
+  width: 100%; 
+  float: left; 
+  top: 0; 
+  bottom: 0; 
+  left: 0;
+  right: 0; 
+  padding: none;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.app-main { 
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.styled-form { 
+  display: flex; 
+  flex-direction: column; 
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+input[type="date"] {
+  width: 90%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="text"] {
+  width: 90%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4203a9;
+  transition: background-color 0.3s;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.result {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+select {
+  width: 95%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+option {
+  padding: 10px;
+  font-size: 16px;
+  background-color: #fff;
+  color: #000;
+}
+
+option:hover {
+  background-color: #f0f0f0;
+}
+
+option:selected {
+  background-color: #007bff;
+  color: #fff;
 }

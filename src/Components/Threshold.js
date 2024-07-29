@@ -113,21 +113,21 @@ function CalculateThreshold( {ageHours, setAgeHours, sbrMeasurement, setSBRMeasu
             ET_threshold = 370;
           }
         } else if (gestationAge >= '38') {
-            if (ageHours >= 0 || ageHours <= 24) { 
+            if (ageHours >= 0 && ageHours < 24) { 
               PT_threshold = (ageHours*4.16667) + 100 
-            } else if (ageHours >= 24 || ageHours <= 96) {
-              PT_threshold = (ageHours*2.08333) + 200
+            } else if (ageHours >= 24 && ageHours <= 96) {
+              PT_threshold = (ageHours*2.08333) + 150
             } else if (ageHours > 96) { 
               PT_threshold = 350 
             } 
             
-            if (ageHours >= 0 || ageHours <= 48) {
+            if (ageHours >= 0 && ageHours <= 48) {
               S_threshold = (ageHours*6.25) + 100
             } else if (ageHours > 48) {
               S_threshold = 400
             }
     
-            if (ageHours >= 0 || ageHours <= 42) {
+            if (ageHours >= 0 && ageHours <= 42) {
               ET_threshold = (ageHours*8.33333) + 100 
             } else if (ageHours > 42) {
               ET_threshold = 450
@@ -146,11 +146,10 @@ function CalculateThreshold( {ageHours, setAgeHours, sbrMeasurement, setSBRMeasu
           let calculatedDistance; 
           if (parsedSbrMeasurement < PT_threshold) {
             calculatedDistance = PT_threshold - parsedSbrMeasurement;
-          } else if (parsedSbrMeasurement >= PT_threshold && parsedSbrMeasurement < ET_threshold) { 
-            calculatedDistance = PT_threshold - parsedSbrMeasurement;
           } else { 
-            calculatedDistance = ET_threshold - parsedSbrMeasurement
-          }
+            calculatedDistance = PT_threshold - parsedSbrMeasurement;
+          } 
+          
           calculatedDistance = calculatedDistance / 10
           setDistance(calculatedDistance);
           setSubmitted(true);
@@ -226,9 +225,9 @@ function CalculateThreshold( {ageHours, setAgeHours, sbrMeasurement, setSBRMeasu
             {submitted && distance !== null ? (
               <>
                 {distance > 0 ? (
-                  <div className="result">Distance: {Math.round(Math.abs(distance))} below the threshold line</div>
+                  <div className="result">Distance: {Math.abs(distance).toFixed(1)} below the threshold line</div>
                 ) : distance < 0 ? (
-                  <div className="result">Distance: {Math.round(Math.abs(distance))} above the threshold line</div>
+                  <div className="result">Distance: {Math.abs(distance).toFixed(1)} above the threshold line</div>
                 ) : (
                   <div className="result">Distance: On the threshold line</div>
                 )}

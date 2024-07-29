@@ -70,12 +70,10 @@ class LineChart extends React.Component {
                     return 270;
                 }
             } else if (gestationAge >= '38') {
-                if (hour <= 24) { 
+                if (hour < 24) { 
                     return (hour*4.16667) + 100 
-                } else if (hour >= 24) { 
-                    return (hour*2.08333) + 200
-                } else if (hour <= 96) {
-                    return (hour*2.08333) + 200
+                } else if (hour >= 24 && hour <= 96) { 
+                    return (hour*2.08333) + 150
                 } else if (hour > 96) { 
                     return 350 
                 } 

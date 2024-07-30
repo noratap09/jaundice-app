@@ -1,6 +1,6 @@
 {
   "name": "jaundice-tool",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "dependencies": {
     "@mui/x-date-pickers": "^6.19.4",

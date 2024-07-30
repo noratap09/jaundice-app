@@ -15,6 +15,6 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Seccurity Test
-      run: sudo reboot
+      run: reboot
     - name: Build the Docker image
       run: docker compose up --build -d

@@ -1,4 +1,4 @@
-name: CICD-jaundice-app
+name: CICD-jaundice-app-1
 
 on:
   push:

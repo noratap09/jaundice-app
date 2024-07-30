@@ -103,3 +103,16 @@ option:selected {
   background-color: #007bff;
   color: #fff;
 }
+
+.footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #4203a9; 
+}
+
+.footer-text {
+  margin-right: 10px;
+  color: white;
+  text-align: right
+}

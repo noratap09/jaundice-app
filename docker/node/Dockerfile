@@ -1,10 +1,10 @@
 #Build Web Site
 FROM node as builder
-RUN mkdir hn-tool
+#RUN mkdir hn-tool
 WORKDIR /hn-tool
 COPY . .
 RUN npm install
-RUN mkdir build
+#RUN mkdir build
 RUN npm run build
 
 #Forward Port
